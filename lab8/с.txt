@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+	unsigned int n = 1, x = 1, y = 1, m = 0, u = 0, c = 0;
+	scanf_s("%d",&n);
+	while (n != 0) {
+		// unsigned int x = 1, y = 1, m = 0, u = 0, c = 0;
+		scanf_s("%d", &x);
+		scanf_s("%d", &y);
+		if ((x > y)) {
+			m = m + x;
+		}
+		else {
+			u = u + y;
+		}
+		c = m + u;
+		n--;
+		// printf("%d\n", x);
+		// printf("%d\n", y);
+		// printf("%d\n", m);
+		// printf("%d\n", u);
+		// printf("%d\n", c);
+	}
+	if (c % 5 == 0) {
+		if (x > y) {
+			c = c - x + y;
+		}
+		else {
+			c = c - y + x;
+		}
+	}
+	printf("%d", c);
+	return 0;
+}
