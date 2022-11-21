@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+int sign(int x) {
+	if (x == 0) {
+		return 0;
+	}
+	else if (x > 0) {
+		return 1;
+	}
+	else if (x < 0) {
+		return -1;
+	}
+}
+
+int abs(int y) {
+	if (y > 0) {
+		return y;
+	}
+	else {
+		return -y;
+	}
+}
+
+int min(int a, int b) {
+	if (a > b) {
+		return b;
+	}
+	else {
+		return a;
+	}
+}
+
+bool check(int a, int b) {
+	if ((a >= 5) && (a <= 15) && (b >= -15) && (b <= -5)) {
+		return true;
+	}
+	return false;
+}
+
+int main() {
+	int n_max_step = 51, i = -11, j = -6, l = -5, k_step = 1, last_i, last_l, last_j;
+	for (int k_step = 0; k_step < n_max_step; k_step++) {
+		if (check(i, j)) {
+			printf("In area\n");
+			printf("Number of step k = %d\n", k_step);
+			return 0;
+		}
+		last_i = i;
+		last_j = j;
+		last_l = l;
+		i = ((last_i + last_j + last_l) * (k_step + 1)) % 25 - 
+			(last_i * last_j * last_l * (k_step + 2) % 10) + 10;
+		j = min(((last_i + last_j + last_l) * (k_step + 3) % 25), 
+			(last_i * last_j * last_l * (k_step + 4) % 25)) + 10;
+		l = 2 * sign(last_l * abs(((last_i + last_j + last_l) * (k_step + 5) % 10) - 
+			(last_i * last_j * last_l * (k_step + 6) % 25)));	
+	}
+	printf("out area\n");
+	printf("Number of step k = %d\n", k_step);
+	printf("Coordinate i = %d\n", i);
+	printf("Coordinate j = %d\n", j);
+	printf("Parameter l = %d\n", l);
+	return 0;
+}
