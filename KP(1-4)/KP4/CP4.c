@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <float.h>
+#include <stdlib.h>
 
 long double function8(long double x) {
     return ((0.6 * powl(3, x)) - (2.3 * x) - 3);
@@ -43,14 +44,14 @@ int main() {
             }
         }
         
-        printf("8. Our root is: %Lf\n", (a + b) / 2);
+        printf("8. Our root is: %.4Lf\n", (a + b) / 2);
     }
     
     a = 2.0;
     b = 3.0;
     
     if (fabsl(derivative(a)) < 1 || fabsl(derivative(b)) < 1) {
-        printf("9. Our x = %Lf\n", move(function9, a, b));
+        printf("9. Our x = %.4Lf\n", move(function9, a, b));
     }
     else {
         printf("No");
