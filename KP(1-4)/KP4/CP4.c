@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 long double function8(long double x) {
-    return ((0.6 * powl(3, x)) - (2.3 * x) - 3);
+    return 0.6 * powl(3, x) - (2.3 * x) - 3;
 }
 
 long double function9(long double x) {
@@ -33,7 +33,7 @@ int main() {
         printf("8. NO ROOTS\n");
     }
     else {
-        while (fabsl(a - b) < LDBL_EPSILON) {
+        while (fabsl(a - b) > LDBL_EPSILON) {
             if (function8(a) * function8((a + b) / 2) > 0) {
                 a = (a + b) / 2;
                 b = b;
@@ -44,7 +44,7 @@ int main() {
             }
         }
         
-        printf("8. Our root is: %.4Lf\n", (a + b) / 2 - 0.08);
+        printf("8. Our root is: %.4Lf\n", (a + b) / 2);
     }
     
     a = 2.0;
