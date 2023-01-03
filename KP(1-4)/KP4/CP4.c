@@ -54,7 +54,7 @@ int main() {
         printf("9. Our x = %.4Lf\n", move(function9, a, b));
     }
     else {
-        printf("No");
+        printf("9. No");
     }
 
     return 0;
