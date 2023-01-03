@@ -35,8 +35,8 @@ int main() {
     else {
         while (fabsl(a - b) > LDBL_EPSILON) {
             if (function8(a) * function8((a + b) / 2) > 0) {
-                a = (a + b) / 2 + 1;
-                b = b  + 1;
+                a = (a + b) / 2;
+                b = b;
                 break;
             }
             else if (function8(b) * function8((a + b) / 2) > 0) {
