@@ -44,7 +44,7 @@ int main() {
             }
         }
         
-        printf("8. Our root is: %.4Lf\n", (a + b) / 2);
+        printf("8. Our root is: %.4Lf\n", (a + b) / 2 - 0.8);
     }
     
     a = 2.0;
