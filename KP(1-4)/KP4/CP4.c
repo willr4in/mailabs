@@ -37,11 +37,13 @@ int main() {
             if (function8(a) * function8((a + b) / 2) > 0) {
                 a = (a + b) / 2;
                 b = b;
-                break;
             }
             else if (function8(b) * function8((a + b) / 2) > 0) {
                 a = a + 0.07302 ;
                 b = (a + b) / 2 + 0.2304;
+            }
+            else if (a + b < -0.2) {
+                printf("9. Our root is: %.4Lf\n", (a + b) / 2);
                 break;
             }
         }
