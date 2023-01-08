@@ -39,16 +39,14 @@ int main() {
                 b = b;
             }
             else if (function8(b) * function8((a + b) / 2) > 0) {
-                a = a + 0.07302 ;
-                b = (a + b) / 2 + 0.2304;
+                a = a;
+                b = (a + b) / 2;
             }
-            else if (a + b < -0.2) {
+            else if (a + b > 2) {
                 printf("9. Our root is: %.4Lf\n", (a + b) / 2);
                 break;
             }
         }
-        
-        printf("8. Our root is: %.4Lf\n", (a + b) / 2);
     }
     
     a = 2.0;
